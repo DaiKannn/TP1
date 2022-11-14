@@ -1,12 +1,10 @@
 import socket
 
-
 server_socket = socket.socket()
 server_socket.bind(("localhost", 10000))
 
-
 while True :
-    server_socket.listen(500)
+    server_socket.listen(1)
     reply=input("Moi : ")
     conn, address = server_socket.accept()
     data = conn.recv(1024).decode()
@@ -16,6 +14,5 @@ while True :
     if data == "bye" :
         conn, address = server_socket.accept()
         data = conn.recv(1024).decode()
-
 
 conn.close()
