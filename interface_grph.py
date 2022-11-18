@@ -13,16 +13,18 @@ class MainWindow(QMainWindow):
         widget.setLayout(grid)
 
         lab = QLabel("Saisir votre nom")
-        text = QLineEdit("")
+        self.__lab2 = QLabel ("")
+        self.__text = QLineEdit("")
         ok = QPushButton("Ok")
         quit = QPushButton("Quitter")
 
 # Ajouter les composants au grid ayout
 
         grid.addWidget(lab, 0, 0)
-        grid.addWidget(text, 0, 1)
+        grid.addWidget(self.__text, 0, 1)
         grid.addWidget(ok, 1, 0)
         grid.addWidget(quit, 1, 1)
+        grid.addWidget(self.__lab2, 2,0)
 
         ok.clicked.connect(self._actionOk)
         quit.clicked.connect(self._actionQuitter)
@@ -30,7 +32,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Une première fenêtre")
 
     def _actionOk(self):
-        self.text()
+        self.__lab2.setText(f"Bonjour {self.__text.text()}")
 
     def _actionQuitter(self):
         QCoreApplication.exit(0)
