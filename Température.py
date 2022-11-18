@@ -53,15 +53,6 @@ class MainWindow(QMainWindow):
 
     # def _actionChoix(self):
 
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = MainWindow()
